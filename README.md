@@ -13,14 +13,14 @@ Also see [Acknowledgments](#ack).
 - https://developer.nvidia.com/content/constant-buffers-without-constant-pain-0
 - http://fabiensanglard.net/bumpMapping/index.php
 - https://developer.nvidia.com/sites/default/files/akamai/gamedev/files/sdk/11/TerrainTessellation_WhitePaper.pdf
-- http://www.scratchapixel.com
+- http://www.scratchapixel.com - __All of this!__
 - http://www0.cs.ucl.ac.uk/staff/j.kautz/RTGICourse/
 - http://seanmiddleditch.com/matrices-handedness-pre-and-post-multiplication-row-vs-column-major-and-notations/
 - http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
 - http://thomasdiewald.com/blog/?p=2099
-- http://blog.selfshadow.com/publications/s2012-shading-course/
-- http://renderwonk.com/publications/s2010-shading-course/
-- http://blog.selfshadow.com/2015/08/15/siggraph-2015-links/
+- http://blog.selfshadow.com/publications/s2012-shading-course/ - __All of this!__
+- http://renderwonk.com/publications/s2010-shading-course/ - __All of this!__
+- http://blog.selfshadow.com/2015/08/15/siggraph-2015-links/ - __All of this!__
 - http://link.springer.com/chapter/10.1007%2F978-3-7091-9430-0_20
 - https://research.nvidia.com/sites/default/files/publications/GIVoxels-pg2011-authors.pdf
 - http://simonstechblog.blogspot.co.uk/2013/01/implementing-voxel-cone-tracing.html
@@ -36,7 +36,19 @@ Also see [Acknowledgments](#ack).
 - https://www.sjbaker.org/steve/omniv/love_your_z_buffer.html
 - http://outerra.blogspot.co.uk/2012/11/maximizing-depth-buffer-range-and.html
 - http://www.reedbeta.com/blog/understanding-bcn-texture-compression-formats/
-
+- http://www.frostbite.com/2017/02/tiled-light-trees/
+- http://www.frostbite.com/2017/03/4k-checkerboard-in-battlefield-1-and-mass-effect-andromeda/
+- http://www.frostbite.com/topics/publications/ - __All of this!__
+- https://www.slideshare.net/naughty_dog/the-technology-of-uncharted-drakes-fortune
+- https://www.slideshare.net/naughty_dog/presentations
+- https://www.guerrilla-games.com/read/creating-a-tools-pipeline-for-horizon-zero-dawn
+- https://www.guerrilla-games.com/read/gpu-based-procedural-placement-in-horizon-zero-dawn
+- https://web.archive.org/web/20110716013522/http://www.research.scea.com/gdc2003/spherical-harmonic-lighting.pdf
+- https://mynameismjp.wordpress.com/2016/10/09/sg-series-part-1-a-brief-and-incomplete-history-of-baked-lighting-representations/ __All of this!__
+- https://mynameismjp.wordpress.com/2012/10/15/signal-processing-primer/ __All of this!__
+- https://mynameismjp.wordpress.com/2009/03/10/reconstructing-position-from-depth/
+- https://mynameismjp.wordpress.com/2009/05/05/reconstructing-position-from-depth-continued/
+- https://fgiesen.wordpress.com/2013/02/17/optimizing-sw-occlusion-culling-index/ __All of this!__
 
 ## <a name="arch"></a>GPU Architecture
 *Note:* This part is directly taken from [here](
@@ -69,6 +81,8 @@ https://gist.github.com/jhaberstro/0ef011c39f546c2342693ec6825f9370). See the
 - http://courses.cs.washington.edu/courses/cse471/13sp/lectures/GPUsStudents.pdf
 - http://www.ncsa.illinois.edu/People/kindr/projects/hpca/files/singapore_p1.pdf
 - http://s08.idav.ucdavis.edu/fatahalian-gpu-architecture.pdf
+- https://cstar.iiit.ac.in/~kkishore/GPUArchitecture.pdf
+- ftp://download.nvidia.com/developer/cuda/seminar/TDCI_Arch.pdf
 
 ### <a name="ack"></a>Acknowledgments
 * https://gist.github.com/jhaberstro/0ef011c39f546c2342693ec6825f9370 by
