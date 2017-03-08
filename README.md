@@ -1,8 +1,9 @@
 # graph-prog-resources
-List of resources on graphics programming; both [GPU architecture](
-#arch) and [rendering techniques](#tech).  
+List of resources on graphics programming; both [GPU architecture](#arch)
+and [rendering techniques](#tech).  
 Please do fork & add your resources via pull requests!  
 Also see [Acknowledgments](#ack).
+
 
 ## <a name="tech"></a>Techniques
 - http://cwyman.org/papers/i3d17_hashedAlpha.pdf
@@ -62,6 +63,7 @@ https://gist.github.com/jhaberstro/0ef011c39f546c2342693ec6825f9370). See the
 - https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-143.pdf
 - http://on-demand.gputechconf.com/gtc/2012/presentations/S0514-GTC2012-GPU-Performance-Analysis.pdf (and associated GTC video)
 - http://www.nvidia.com/content/GTC-2010/pdfs/2012_GTC2010v2.pdf
+
 *End of content taken from reference above*
 
 - http://courses.cs.washington.edu/courses/cse471/13sp/lectures/GPUsStudents.pdf
