@@ -1,22 +1,15 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import { Meteor } from 'meteor/meteor';
+import ReactDOM  from 'react-dom';
+import { Tracker } from 'meteor/tracker';
 
-import './main.html';
+import { routes } from '../imports/routes/routes';
+import { Links } from '../imports/api/links';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Tracker.autorun(() => {
+  const links = Links.find().fetch();
+  console.log(links);
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+Meteor.startup(() => {
+  ReactDOM.render(routes, document.getElementById('app'));
 });
