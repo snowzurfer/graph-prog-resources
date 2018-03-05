@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Links } from '../api/links';
+import {
+  Links,
+  insertNewLink
+} from '../api/links';
 import ResList from '../ui/ResList';
 
 export default class Main extends React.Component {
@@ -23,15 +26,20 @@ export default class Main extends React.Component {
     const notes = this.notesRef.value.trim();
 
     if (label && url) {
-      Links.insert({
-        label: label,
-        url: url,
-        notes: notes
-      });
-
-      this.labelRef.value = '';
-      this.urlRef.value = '';
-      this.notesRef.value = '';
+      insertNewLink.call({label, url, notes},
+        (err, res) => {
+          if (err) {
+            errMsg = err.details[0].message;
+            console.log(err.details[0].message);
+          }
+          else {
+            this.labelRef.value = '';
+            this.urlRef.value = '';
+            this.notesRef.value = '';
+            this.notesRef.value = '';
+          }
+        }
+      );
     }
 
     this.setState({
@@ -51,7 +59,13 @@ export default class Main extends React.Component {
           <input type="text" name="description" ref={(el) => this.labelRef = el} placeholder="Label"/>
           <input type="text" name="url" ref={(el) => this.urlRef = el} placeholder="URL"/>
           <input type="text" name="notes" ref={(el) => this.notesRef = el} placeholder="Notes"/>
-          <button>Submit</button>
+          <select ref={(el) => this.typeRed = el}>
+            {
+              Links.linkTypes.map(t => {
+                return <option key={t} value={t}>{t}</option>
+              })
+            }
+          </select>
           <input type="submit" value="Submit"/>
         </form>
 

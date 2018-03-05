@@ -7,7 +7,6 @@ import { Links } from '../imports/api/links';
 
 Tracker.autorun(() => {
   const links = Links.find().fetch();
-  console.log(links);
 });
 
 Meteor.startup(() => {
