@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import moment from 'moment';
-import numeral from 'numeral';
 
 export const Links = new Mongo.Collection('links');
 
@@ -27,7 +26,8 @@ Links.publicFields = {
   notes: 1,
   upvotes: 1,
   dateUpdated: 1,
-  type: 1
+  type: 1,
+  tags: 1
 };
 
 // Add publications to the Link object collection for easy retrieval
@@ -50,7 +50,7 @@ if (Meteor.isServer) {
 // Methods to insert links
 export const insertNewLink = new ValidatedMethod({
   name: Links.methods.insertNewLink,
-  validate({label, url, notes, type}) {
+  validate({label, url, notes, type, tags}) {
     const schema = new SimpleSchema({
       label: {
         type: String,
@@ -68,12 +68,16 @@ export const insertNewLink = new ValidatedMethod({
       type: {
         type: String,
         optional: true,
-        allowedValues: Links.publicFields
+        allowedValues: Links.linkTypes
+      },
+      tags: {
+        type: String,
+        optional: true
       }
     }, { requiredByDefault: true });
 
     // This will throw automatically if there are problems
-    schema.validate({label, url, notes});
+    schema.validate({label, url, notes, type, tags});
 
     // Check if there already are entries with the same URL
     const isLinkAlreadyPresent = !!Links.find({url: {$eq: url}}).count();
@@ -88,7 +92,10 @@ export const insertNewLink = new ValidatedMethod({
     }
   },
 
-  run({label, url, notes, type}) {
+  run({label, url, notes, type, tags}) {
+    // Make array out of list of tags
+    const tagsArray = tags.split(',');
+
     Links.insert({
       label: label,
       url: url,
@@ -96,7 +103,8 @@ export const insertNewLink = new ValidatedMethod({
       upvotes: 1,
       dateCreation: moment().format('ll'),
       dateUpdated: moment().format('ll'),
-      type: type
+      type: type,
+      tags: tagsArray
     });
   }
 });

@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.36",
+    "bootstrap": "^4.0.0",
     "meteor-node-stubs": "^0.3.2",
     "moment": "^2.21.0",
     "numeral": "^2.0.6",
@@ -13,6 +14,7 @@
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "reactstrap": "^5.0.0-beta.2",
     "simpl-schema": "^1.4.2"
   },
   "devDependencies": {

@@ -1,77 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import {
-  Links,
-  insertNewLink
-} from '../api/links';
 import ResList from '../ui/ResList';
 
 export default class Main extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      error: ''
-    };
-  }
-
-  onSubmitLink(e) {
-    let errMsg = '';
-
-    e.preventDefault();
-
-    const label = this.labelRef.value.trim();
-    const url = this.urlRef.value.trim();
-    const notes = this.notesRef.value.trim();
-
-    if (label && url) {
-      insertNewLink.call({label, url, notes},
-        (err, res) => {
-          if (err) {
-            errMsg = err.details[0].message;
-            console.log(err.details[0].message);
-          }
-          else {
-            this.labelRef.value = '';
-            this.urlRef.value = '';
-            this.notesRef.value = '';
-            this.notesRef.value = '';
-          }
-        }
-      );
-    }
-
-    this.setState({
-      error: errMsg
-    });
-  }
-
   render() {
     return (
       <div>
-        <h1>Main page for Graphis Prog Resources</h1>
+        <nav className="navbar navbar-expand-lg">
+           <a className="navbar-brand" href="#">Home</a>
+           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span className="navbar-toggler-icon"></span>
+           </button>
 
-        {this.state.error ? <p>{this.state.error}</p> : undefined }
-
-        <p>Add Link</p>
-        <form onSubmit={this.onSubmitLink.bind(this)}>
-          <input type="text" name="description" ref={(el) => this.labelRef = el} placeholder="Label"/>
-          <input type="text" name="url" ref={(el) => this.urlRef = el} placeholder="URL"/>
-          <input type="text" name="notes" ref={(el) => this.notesRef = el} placeholder="Notes"/>
-          <select ref={(el) => this.typeRed = el}>
-            {
-              Links.linkTypes.map(t => {
-                return <option key={t} value={t}>{t}</option>
-              })
-            }
-          </select>
-          <input type="submit" value="Submit"/>
-        </form>
-
+          <div className="collapse navbar-collapse " id="navbarSupportedContent">
+             <ul className="navbar-nav mr-4">
+               
+               <li className="nav-item">
+                 <a className="nav-link" href="#">About</a>
+               </li>
+               <li className="nav-item">
+                 <a className="nav-link " href="#">Portfolio</a>
+               </li>
+               <li className="nav-item">
+                 <a className="nav-link " href="#">Team</a>
+               </li>
+               <li className="nav-item">
+                 <a className="nav-link " href="#">Post</a>
+               </li>
+               <li className="nav-item">
+                 <a className="nav-link " href="#">Contact</a>
+               </li>
+             </ul>
+             
+           </div>
+        </nav>
         <ResList/>
 
-        <Link to="/about">About</Link>
       </div>
     );
   }
